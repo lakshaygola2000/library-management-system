@@ -205,3 +205,19 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Migration files
+migrations/
+*/migrations/
+
+# Database files
+*.sqlite3
+
+# Pycache
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Pycache
