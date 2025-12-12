@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 
 from apps.books.models import Book
+from apps.books.permissions import IsAdminOrReadOnly
 from apps.books.services import BookBorrowService, BookService
 from apps.books.serializers import BookSerializer, LoanSerializer
 
@@ -53,7 +54,7 @@ class AddBookView(APIView):
     """
     View for adding a book.
     """
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsAdminOrReadOnly)
     serializer_class = BookSerializer
 
     def post(self, request):
